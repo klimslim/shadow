@@ -19,9 +19,10 @@
 #include "ext/standard/php_filestat.h"
 #include <sys/stat.h> // For S_ISDIR and struct stat
 #include <php_main.h> // For php_stream_dirent, PHP_MAXPATHLEN
-#include "php_fs.h"     // For php_sys_stat, VCWD_STAT, DT_* constants if available
+// #include "php_fs.h"     // For php_sys_stat, VCWD_STAT, DT_* constants if available - Replaced by dirent.h
+#include <dirent.h>     // For DT_DIR, DT_REG, DT_UNKNOWN if available
 
-// Define DT_DIR, DT_REG, DT_UNKNOWN if not available from php_fs.h or system headers
+// Define DT_DIR, DT_REG, DT_UNKNOWN if not available from system headers (like dirent.h)
 #ifndef DT_DIR
 #define DT_DIR 4
 #endif
