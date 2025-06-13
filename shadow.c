@@ -1156,9 +1156,7 @@ static php_stream *shadow_dir_opener(php_stream_wrapper *wrapper, const char *pa
 	if (tempdir) {
 		php_stream_rewinddir(tempdir);
 		while(php_stream_readdir(tempdir, &entry)) {
-			if (strcmp(entry.d_name, ".") == 0 || strcmp(entry.d_name, "..") == 0) {
-				continue;
-			}
+			// Removed if block for "." and ".."
 
 			// templname is the base path of the template directory being iterated
 			snprintf(full_path, MAXPATHLEN - 1, "%s%c%s", templname, DEFAULT_SLASH, entry.d_name);
@@ -1183,9 +1181,7 @@ static php_stream *shadow_dir_opener(php_stream_wrapper *wrapper, const char *pa
 	if (instdir) {
 		php_stream_rewinddir(instdir);
 		while(php_stream_readdir(instdir, &entry)) {
-			if (strcmp(entry.d_name, ".") == 0 || strcmp(entry.d_name, "..") == 0) {
-				continue;
-			}
+			// Removed if block for "." and ".."
 
 			// instname is the base path of the instance directory being iterated
 			snprintf(full_path, MAXPATHLEN - 1, "%s%c%s", instname, DEFAULT_SLASH, entry.d_name);
