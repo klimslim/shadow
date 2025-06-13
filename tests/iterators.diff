@@ -1,0 +1,15 @@
+001- error_reporting_at_start: 12345
+001+ error_reporting_at_start: 30719
+     inst_accounts_file
+     inst_calls_file
+     inst_cases_file
+--
+     inst_project_file
+     inst_purchasedlineitems_file
+     inst_tasks_file
+014- string(%d) "Executed content of %s (up to %d bytes)"
+015- string(%d) "Executed content of %s (up to %d bytes)"
+014+ string(28) "<?php echo "instance rest";
+015+ "
+016+ string(28) "<?php echo "template rest";
+017+ "

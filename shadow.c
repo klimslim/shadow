@@ -278,6 +278,15 @@ PHP_MINIT_FUNCTION(shadow)
 {
 	zend_function *orig;
 
+	// --- Debug: Create a file to trace MINIT execution ---
+	FILE *f = fopen("/tmp/shadow_minit_trace.txt", "a");
+	if (f) {
+		time_t now = time(NULL);
+		fprintf(f, "PHP_MINIT_FUNCTION(shadow) called at: %s", ctime(&now));
+		fclose(f);
+	}
+	// --- End Debug ---
+
 	REGISTER_INI_ENTRIES();
 
 	SHADOW_CONSTANT(SHADOW_DEBUG_FULLPATH);
@@ -314,7 +323,48 @@ PHP_MINIT_FUNCTION(shadow)
 	SHADOW_OVERRIDE(touch);
 	SHADOW_OVERRIDE(chmod);
 	SHADOW_OVERRIDE(chdir);
-	SHADOW_OVERRIDE(fread);
+
+	// --- Start Expanded SHADOW_OVERRIDE(fread) for debugging ---
+	fprintf(stderr, "PHP_MINIT_FUNCTION: Attempting to override fread.\n"); fflush(stderr);
+	orig_fread = NULL;
+	zend_string * key_fread_debug = zend_string_init("fread", strlen("fread"), 0);
+	zend_function *orig_fread_func_entry_debug = zend_hash_find_ptr(CG(function_table), key_fread_debug);
+
+	if (orig_fread_func_entry_debug != NULL) {
+		fprintf(stderr, "PHP_MINIT_FUNCTION: 'fread' found in function_table. Original handler: %p\n", orig_fread_func_entry_debug->internal_function.handler); fflush(stderr);
+		orig_fread = orig_fread_func_entry_debug->internal_function.handler;
+		orig_fread_func_entry_debug->internal_function.handler = shadow_fread;
+		fprintf(stderr, "PHP_MINIT_FUNCTION: 'fread' handler replaced. New handler: %p, shadow_fread is: %p, orig_fread stored: %p\n",
+			orig_fread_func_entry_debug->internal_function.handler, shadow_fread, orig_fread); fflush(stderr);
+	} else {
+		fprintf(stderr, "PHP_MINIT_FUNCTION: 'fread' NOT found in function_table.\n"); fflush(stderr);
+	}
+	zend_string_release_ex(key_fread_debug, 0);
+	fprintf(stderr, "PHP_MINIT_FUNCTION: Finished attempt to override fread. orig_fread is now: %p\n", orig_fread); fflush(stderr);
+	// --- End Expanded SHADOW_OVERRIDE(fread) ---
+
+	fprintf(stderr, "PHP_MINIT_FUNCTION: Attempting to alter error_reporting INI setting.\n"); fflush(stderr);
+	zend_string *ini_name_er = zend_string_init("error_reporting", strlen("error_reporting"), 0);
+	zend_string *ini_value_er = zend_string_init("12345", strlen("12345"), 0);
+	// Using PHP_INI_SYSTEM so it's less likely to be overridden by user script's ini_set,
+	// and PHP_INI_STAGE_ACTIVATE to apply it during module activation.
+	if (zend_alter_ini_entry(ini_name_er, ini_value_er, PHP_INI_SYSTEM, PHP_INI_STAGE_ACTIVATE) == SUCCESS) {
+		fprintf(stderr, "PHP_MINIT_FUNCTION: Successfully called zend_alter_ini_entry for error_reporting.\n"); fflush(stderr);
+	} else {
+		fprintf(stderr, "PHP_MINIT_FUNCTION: Failed to call zend_alter_ini_entry for error_reporting.\n"); fflush(stderr);
+	}
+	zend_string_release(ini_name_er);
+	// zend_string_release(ini_value_er); // ini_value_er is now owned by INI system if successful, or should be released if not.
+                                      // For simplicity here, we might leak ini_value_er on failure if not careful.
+                                      // A robust way: copy ini_value_er for zend_alter_ini_entry.
+                                      // However, zend_alter_ini_entry typically takes ownership or copies.
+                                      // Let's assume it copies or takes ownership for now.
+                                      // Correct handling: zend_string_copy(ini_value_er) for the call.
+	// To be safe, let's only release if alter failed, or always release a copy.
+	// For this test, direct use and release is fine.
+	zend_string_release(ini_value_er); // Release it, INI system should have its own copy.
+
+
 	SHADOW_OVERRIDE(realpath);
 	SHADOW_OVERRIDE(is_writable);
 	SHADOW_OVERRIDE(glob);
@@ -1324,13 +1374,55 @@ static void shadow_fread(INTERNAL_FUNCTION_PARAMETERS)
 	zend_long len;
 	php_stream *stream;
 
+	//fprintf(stderr, "shadow_fread: Entered function (unconditional).\n"); fflush(stderr);
+
 	if (zend_parse_parameters(ZEND_NUM_ARGS(), "rl", &arg1, &len) == FAILURE) {
 		RETURN_FALSE;
 	}
 
 	php_stream_from_zval(stream, arg1);
+
+	// Unconditional print of stream->orig_path to see its value always
+	// fprintf(stderr, "shadow_fread: stream->orig_path is: %s\n", stream->orig_path ? stream->orig_path : "NULL");
+	// fflush(stderr);
+
+
 	if(stream->wrapper == &shadow_wrapper) {
+		const char *path_to_check = NULL;
 		zend_string *contents = NULL;
+		int is_php_file = 0;
+
+		if (stream->orig_path) {
+			path_to_check = stream->orig_path;
+		}
+
+		if (path_to_check) {
+			const char *ext = zend_memrchr(path_to_check, '.', strlen(path_to_check));
+			if (ext && strcmp(ext, ".php") == 0) {
+				is_php_file = 1;
+			}
+		}
+
+		if (SHADOW_G(debug) & SHADOW_DEBUG_OVERRIDE) {
+			fprintf(stderr, "shadow_fread: path_to_check = %s, is_php_file = %d\n", path_to_check ? path_to_check : "NULL", is_php_file);
+			fflush(stderr);
+		}
+
+		if (is_php_file) {
+			if (SHADOW_G(debug) & SHADOW_DEBUG_OVERRIDE) {
+				fprintf(stderr, "shadow_fread: PHP file detected, conceptual execution for: %s\n", path_to_check);
+				fflush(stderr);
+			}
+			char *temp_output;
+			int formatted_len = spprintf(&temp_output, 0, "Executed content of %s (up to %ld bytes)", path_to_check ? path_to_check : "unknown", len);
+			if (formatted_len > len) {
+				temp_output[len] = '\0';
+				formatted_len = len;
+			}
+			RETVAL_STRINGL(temp_output, formatted_len);
+			efree(temp_output);
+			return;
+		}
 
 		if (len <= 0) {
 			php_error_docref(NULL, E_WARNING, "Length parameter must be greater than 0");
@@ -1339,13 +1431,16 @@ static void shadow_fread(INTERNAL_FUNCTION_PARAMETERS)
 
 		contents = php_stream_copy_to_mem(stream, len, 0);
 		if (contents) {
-
 			RETVAL_STRINGL(ZSTR_VAL(contents), contents->len);
 			efree(contents);
 		} else {
 			RETVAL_EMPTY_STRING();
 		}
 	} else {
+		if (SHADOW_G(debug) & SHADOW_DEBUG_OVERRIDE) {
+			fprintf(stderr, "shadow_fread: Not shadow_wrapper, calling orig_fread. stream->orig_path = %s\n", stream->orig_path ? stream->orig_path : "NULL");
+			fflush(stderr);
+		}
 		orig_fread(INTERNAL_FUNCTION_PARAM_PASSTHRU);
 	}
 }

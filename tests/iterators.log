@@ -1,0 +1,36 @@
+
+---- EXPECTED OUTPUT
+error_reporting_at_start: 12345
+inst_accounts_file
+inst_calls_file
+inst_cases_file
+inst_contacts_file
+inst_documents_file
+inst_externalusers_file
+inst_meetings_file
+inst_messages_file
+inst_notes_file
+inst_project_file
+inst_purchasedlineitems_file
+inst_tasks_file
+string(%d) "Executed content of %s (up to %d bytes)"
+string(%d) "Executed content of %s (up to %d bytes)"
+---- ACTUAL OUTPUT
+error_reporting_at_start: 30719
+inst_accounts_file
+inst_calls_file
+inst_cases_file
+inst_contacts_file
+inst_documents_file
+inst_externalusers_file
+inst_meetings_file
+inst_messages_file
+inst_notes_file
+inst_project_file
+inst_purchasedlineitems_file
+inst_tasks_file
+string(28) "<?php echo "instance rest";
+"
+string(28) "<?php echo "template rest";
+"
+---- FAILED
