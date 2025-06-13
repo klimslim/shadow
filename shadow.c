@@ -1198,6 +1198,16 @@ static php_stream *shadow_dir_opener(php_stream_wrapper *wrapper, const char *pa
 				if(SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) fprintf(stderr, "Shadow: Stat failed for instance path %s\n", full_path);
 			}
 
+			// --- BEGIN DIAGNOSTIC BLOCK ---
+			if (new_entry_info->d_type == DT_UNKNOWN) {
+				if (SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) { // Or another suitable SHADOW_DEBUG_ flag
+					fprintf(stderr, "Shadow [DIAGNOSTIC]: Instance entry '%s' in directory '%s' was DT_UNKNOWN. Forcing to DT_REG.\n", new_entry_info->d_name, instname);
+				}
+				// Temporarily force DT_UNKNOWN to DT_REG to see if it gets listed by the iterator
+				new_entry_info->d_type = DT_REG;
+			}
+			// --- END DIAGNOSTIC BLOCK ---
+
 			// existing_entry_info is declared at the top of the function.
 			// For clarity in this block, let's use a more specific name for the find result.
 			shadow_dir_entry_info *entry_from_template;
