@@ -1198,14 +1198,20 @@ static php_stream *shadow_dir_opener(php_stream_wrapper *wrapper, const char *pa
 				if(SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) fprintf(stderr, "Shadow: Stat failed for instance path %s\n", full_path);
 			}
 
-			existing_entry_info = zend_hash_str_find_ptr(mergedata, new_entry_info->d_name, strlen(new_entry_info->d_name));
-			if (existing_entry_info) {
-				// Instance overrides template. Free the old template entry.
-				// The hashtable destructor would eventually free it if we just updated,
-				// but zend_hash_str_update_ptr itself doesn't free the old data pointer it replaces.
-				efree(existing_entry_info);
+			// existing_entry_info is declared at the top of the function.
+			// For clarity in this block, let's use a more specific name for the find result.
+			shadow_dir_entry_info *entry_from_template;
+			entry_from_template = zend_hash_str_find_ptr(mergedata, new_entry_info->d_name, strlen(new_entry_info->d_name));
+
+			if (entry_from_template) {
+				// Entry was also found in the template. Free the template's entry data.
+				efree(entry_from_template);
+				// Update the HashTable to point to the new instance entry's data.
+				zend_hash_str_update_ptr(mergedata, new_entry_info->d_name, strlen(new_entry_info->d_name), new_entry_info);
+			} else {
+				// This entry is unique to the instance directory. Add it.
+				zend_hash_str_add_ptr(mergedata, new_entry_info->d_name, strlen(new_entry_info->d_name), new_entry_info);
 			}
-			zend_hash_str_update_ptr(mergedata, new_entry_info->d_name, strlen(new_entry_info->d_name), new_entry_info);
 		}
 	}
 	if (instname) { efree(instname); instname = NULL; }
