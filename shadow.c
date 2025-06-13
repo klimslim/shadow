@@ -736,6 +736,9 @@ filename is relative to template root
 */
 static char *template_to_instance(const char *filename, int options)
 {
+    if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+        fprintf(stderr, "T2I_DEBUG: ENTER template_to_instance for '%s'. Options: %d, OPT_CHECK_EXISTS: %s, OPT_RETURN_INSTANCE: %s\\n", filename, options, (options & 1) ? "SET" : "NOT_SET", (options & 4) ? "SET" : "NOT_SET");
+    }
 	char *realpath = NULL;
 	int fnamelen = strlen(filename);
 	char *newname = NULL;
@@ -746,6 +749,64 @@ static char *template_to_instance(const char *filename, int options)
 
 	/* Always get the full path since there can be symlinks and stuff like // or ..'s in there */
 	realpath = get_full_path(filename);
+    // BEGIN: Fallback logic for get_full_path failure
+    if (!realpath && SHADOW_ENABLED() && strstr(filename, SHADOW_G(template)->val)) {
+        char *filename_copy_for_dirname = estrndup(filename, strlen(filename));
+        int parent_dir_len = zend_dirname(filename_copy_for_dirname, strlen(filename_copy_for_dirname));
+        const char *basename_part = filename + parent_dir_len + (IS_SLASH(filename[parent_dir_len]) ? 1 : 0);
+
+        if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+            fprintf(stderr, "Shadow Path Check (Fallback): Initial get_full_path failed for '%s'. Parent from dirname: '%s', Basename: '%s'\\n", filename, filename_copy_for_dirname, basename_part);
+        }
+
+        if (parent_dir_len > 0 && basename_part[0] != '\0') {
+            char *resolved_parent_inst = template_to_instance(filename_copy_for_dirname, OPT_CHECK_EXISTS | OPT_RETURN_INSTANCE);
+
+            if (resolved_parent_inst) {
+                if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+                    fprintf(stderr, "Shadow Path Check (Fallback): Parent '%s' resolved via template_to_instance to '%s'\\n", filename_copy_for_dirname, resolved_parent_inst);
+                }
+                php_stream_statbuf ssb_fallback;
+                if (plain_ops->url_stat(&php_plain_files_wrapper, resolved_parent_inst, PHP_STREAM_URL_STAT_QUIET, &ssb_fallback, NULL) == 0 && S_ISDIR(ssb_fallback.sb.st_mode)) {
+                    char *new_candidate_path;
+                    spprintf(&new_candidate_path, 0, "%s/%s", resolved_parent_inst, basename_part);
+                    if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+                        fprintf(stderr, "Shadow Path Check (Fallback): Resolved parent is a directory. New candidate path for get_full_path: '%s'\\n", new_candidate_path);
+                    }
+                    char* temp_realpath = get_full_path(new_candidate_path);
+                    if (temp_realpath) {
+                        if(realpath) efree(realpath);
+                        realpath = temp_realpath;
+                        if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+                             fprintf(stderr, "Shadow Path Check (Fallback): Successfully got new realpath: '%s' from candidate '%s'\\n", realpath, new_candidate_path);
+                        }
+                    } else {
+                        if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+                             fprintf(stderr, "Shadow Path Check (Fallback): get_full_path failed for new candidate '%s'\\n", new_candidate_path);
+                        }
+                    }
+                    efree(new_candidate_path);
+                } else {
+                    if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+                        fprintf(stderr, "Shadow Path Check (Fallback): Resolved parent '%s' is NOT a directory or stat failed.\\n", resolved_parent_inst);
+                    }
+                }
+                efree(resolved_parent_inst);
+            } else {
+                if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+                    fprintf(stderr, "Shadow Path Check (Fallback): template_to_instance failed to resolve parent '%s'\\n", filename_copy_for_dirname);
+                }
+            }
+        }
+        efree(filename_copy_for_dirname);
+    }
+    // END: Fallback logic
+    if (realpath) {
+        fnamelen = strlen(realpath);
+        if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+            fprintf(stderr, "Shadow Path Check: Updated fnamelen to %d for realpath: %s\\n", fnamelen, realpath);
+        }
+    }
 	if(SHADOW_G(debug) & SHADOW_DEBUG_FULLPATH)	fprintf(stderr, "Full path: %s\n", realpath);
 	if(!realpath) {
 		return NULL;
@@ -803,6 +864,9 @@ static char *template_to_instance(const char *filename, int options)
 				);
 			} else {
 				/* TODO: use realpath here too? */
+                if (SHADOW_G(debug) & SHADOW_DEBUG_PATHCHECK) {
+                    fprintf(stderr, "T2I_DEBUG: In instance block for '%s', before OPT_RETURN_INSTANCE check. Options: %d, OPT_RETURN_INSTANCE is %s\\n", realpath ? realpath : "NULL_REALPATH", options, (options & 4) ? "SET" : "NOT_SET");
+                }
 				if((options & OPT_RETURN_INSTANCE)) {
 					newname = estrndup(realpath, fnamelen);
 					efree(realpath);
@@ -941,22 +1005,57 @@ static void adjust_stat(php_stream_statbuf *ssb)
 
 static int shadow_stat(php_stream_wrapper *wrapper, const char *url, int flags, php_stream_statbuf *ssb, php_stream_context *context)
 {
-	char *instname = template_to_instance(url, OPT_CHECK_EXISTS);
-	int res;
-	if(SHADOW_ENABLED()) {
-		if(SHADOW_G(debug) & SHADOW_DEBUG_STAT)  fprintf(stderr, "Stat: %s (%s) %d\n", url, instname, flags);
-	}
-	if(instname) {
-		res = plain_ops->url_stat(wrapper, instname, flags, ssb, context);
-		if(SHADOW_G(debug) & SHADOW_DEBUG_STAT)  fprintf(stderr, "Stat res: %d\n", res);
-		efree(instname);
-		adjust_stat(ssb);
-		return res;
-	}
-	res = plain_ops->url_stat(wrapper, url, flags, ssb, context);
-	if(SHADOW_G(debug) & SHADOW_DEBUG_STAT)  fprintf(stderr, "Stat res: %d\n", res);
-	adjust_stat(ssb);
-	return res;
+    char *instname = NULL;
+    int res = -1;
+
+    if (SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+        fprintf(stderr, "shadow_stat: ENTER URL: %s, Flags: %d\n", url, flags);
+    }
+
+    if (SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+        fprintf(stderr, "STAT_DEBUG: Values: OCE=%d, ORI=%d, Combo=%d. About to call t2i for '%s' with options: %d\\n", OPT_CHECK_EXISTS, OPT_RETURN_INSTANCE, (OPT_CHECK_EXISTS | OPT_RETURN_INSTANCE), url, (OPT_CHECK_EXISTS | OPT_RETURN_INSTANCE));
+    }
+    instname = template_to_instance(url, OPT_CHECK_EXISTS | OPT_RETURN_INSTANCE);
+
+    if (SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+        fprintf(stderr, "shadow_stat: Resolved Instance Name: %s (original URL: %s)\n", instname ? instname : "NULL", url);
+    }
+
+    if (instname) {
+        res = plain_ops->url_stat(wrapper, instname, flags, ssb, context);
+        if (SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+            fprintf(stderr, "shadow_stat: Stat on INSTANCE '%s': Result: %d\n", instname, res);
+        }
+        efree(instname);
+    } else {
+        res = plain_ops->url_stat(wrapper, url, flags, ssb, context);
+        if (SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+            fprintf(stderr, "shadow_stat: Stat on ORIGINAL '%s': Result: %d\n", url, res);
+        }
+    }
+
+    if (res == 0) {
+        if (SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+            // The term (instname ? "used_instance_path" : url) refers to the state of 'instname' variable here.
+            // If instname was used and efree'd, this pointer is dangling.
+            // A safer way would be to use a temporary variable to store which path was used for stat.
+            // However, sticking to the direct C code translation from the awk script's print statements.
+            fprintf(stderr, "shadow_stat: SUCCESS for '%s': Mode: %07o (octal), UID: %d, GID: %d\n", (instname ? "used_instance_path_potentially_freed" : url), ssb->sb.st_mode, ssb->sb.st_uid, ssb->sb.st_gid);
+            if (S_ISDIR(ssb->sb.st_mode)) fprintf(stderr, "shadow_stat: Type for '%s': Directory\n", (instname ? "used_instance_path_potentially_freed" : url));
+            else if (S_ISREG(ssb->sb.st_mode)) fprintf(stderr, "shadow_stat: Type for '%s': File\n", (instname ? "used_instance_path_potentially_freed" : url));
+            else fprintf(stderr, "shadow_stat: Type for '%s': Other\n", (instname ? "used_instance_path_potentially_freed" : url));
+        }
+        adjust_stat(ssb);
+    } else {
+        if (SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+            fprintf(stderr, "shadow_stat: FAILED for '%s', errno: %d\n", (instname ? "used_instance_path_potentially_freed" : url), errno);
+        }
+    }
+
+    if (SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_STAT) {
+        fprintf(stderr, "shadow_stat: EXIT URL: %s, Result: %d\n", url, res);
+    }
+    return res;
 }
 
 static int shadow_unlink(php_stream_wrapper *wrapper, const char *url, int options, php_stream_context *context)
@@ -1050,6 +1149,7 @@ static int shadow_rmdir(php_stream_wrapper *wrapper, const char *url, int option
 
 static php_stream *shadow_dir_opener(php_stream_wrapper *wrapper, const char *path, const char *mode, int options, zend_string **opened_path, php_stream_context *context STREAMS_DC)
 {
+    if(SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) fprintf(stderr, "shadow_dir_opener: ENTER Path: %s, Mode: %s\\n", path, mode);
 	char *instname;
 	php_stream *tempdir = NULL, *instdir, *mergestream;
 	HashTable *mergedata;
@@ -1117,9 +1217,11 @@ static php_stream *shadow_dir_opener(php_stream_wrapper *wrapper, const char *pa
 	ALLOC_HASHTABLE(mergedata);
 	zend_hash_init(mergedata, 10, NULL, NULL, 0);
 	while(php_stream_readdir(tempdir, &entry)) {
+            if(SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) fprintf(stderr, "shadow_dir_opener: Adding from TEMPLATE to mergedata: %s\\n", entry.d_name);
 		zend_hash_str_add_new_ptr(mergedata, entry.d_name, strlen(entry.d_name), &dummy);
 	}
 	while(php_stream_readdir(instdir, &entry)) {
+            if(SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) fprintf(stderr, "shadow_dir_opener: Adding/Updating from INSTANCE to mergedata: %s\\n", entry.d_name);
 		zend_hash_str_update_ptr(mergedata, entry.d_name, strlen(entry.d_name), &dummy);
 	}
 	zend_hash_internal_pointer_reset(mergedata);
@@ -1138,6 +1240,15 @@ static php_stream *shadow_dir_opener(php_stream_wrapper *wrapper, const char *pa
 
 static ssize_t shadow_dirstream_read(php_stream *stream, char *buf, size_t count)
 {
+    if(SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) {
+        zend_string *current_key = NULL; zend_ulong current_num;
+        zend_hash_get_current_key((HashTable *)stream->abstract, &current_key, &current_num);
+        if (current_key) {
+            fprintf(stderr, "shadow_dirstream_read: Attempting to read entry: %s\\n", ZSTR_VAL(current_key));
+        } else {
+            fprintf(stderr, "shadow_dirstream_read: Attempting to read entry (non-string key or end of hash)\\n");
+        }
+    }
 	php_stream_dirent *ent = (php_stream_dirent*)buf;
 	HashTable *mergedata = (HashTable *)stream->abstract;
 	zend_string *name = NULL;
@@ -1156,6 +1267,7 @@ static ssize_t shadow_dirstream_read(php_stream *stream, char *buf, size_t count
 	zend_hash_move_forward(mergedata);
 
 	PHP_STRLCPY(ent->d_name, ZSTR_VAL(name), sizeof(ent->d_name), ZSTR_LEN(name));
+    if(SHADOW_ENABLED() && SHADOW_G(debug) & SHADOW_DEBUG_OPENDIR) fprintf(stderr, "shadow_dirstream_read: Copied to dirent: %s\\n", ent->d_name);
 	return sizeof(php_stream_dirent);
 }
 

@@ -1,0 +1,374 @@
+T2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir'. Options: 1, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: NOT_SET\nResolve: /app/tests/fixtures/templatedir -> /app/tests/fixtures/templatedir
+T2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/instance'. Options: 1, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: NOT_SET\nResolve: /app/tests/fixtures/instance -> /app/tests/fixtures/instance
+T2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir'. Options: 2, OPT_CHECK_EXISTS: NOT_SET, OPT_RETURN_INSTANCE: NOT_SET\nShadow Path Check: Updated fnamelen to 31 for realpath: /app/tests/fixtures/templatedir\nFull path: /app/tests/fixtures/templatedir
+Path check: /app/tests/fixtures/templatedir => (null)
+Realpath /app/tests/fixtures/templatedir ((null))
+T2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/instance'. Options: 2, OPT_CHECK_EXISTS: NOT_SET, OPT_RETURN_INSTANCE: NOT_SET\nShadow Path Check: Updated fnamelen to 28 for realpath: /app/tests/fixtures/instance\nFull path: /app/tests/fixtures/instance
+Path check: /app/tests/fixtures/instance => (null)
+Realpath /app/tests/fixtures/instance ((null))
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/api, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/api' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/api'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 35 for realpath: /app/tests/fixtures/templatedir/api\nFull path: /app/tests/fixtures/templatedir/api
+In template: /app/tests/fixtures/templatedir/api
+Path check: /app/tests/fixtures/templatedir/api => /app/tests/fixtures/instance/api
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/api (original URL: /app/tests/fixtures/templatedir/api)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/api': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/api, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/api, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/api'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 35 for realpath: /app/tests/fixtures/templatedir/api\nFull path: /app/tests/fixtures/templatedir/api
+In template: /app/tests/fixtures/templatedir/api
+Path check from cache: /app/tests/fixtures/templatedir/api => /app/tests/fixtures/instance/api
+Opendir: /app/tests/fixtures/templatedir/api (/app/tests/fixtures/instance/api)
+Opening templdir: /app/tests/fixtures/templatedir/api
+shadow_dir_opener: Adding from TEMPLATE to mergedata: rest.php\nshadow_dir_opener: Adding from TEMPLATE to mergedata: ..\nshadow_dir_opener: Adding from TEMPLATE to mergedata: .\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: rest.php\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: ..\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: .\nshadow_dirstream_read: Attempting to read entry: rest.php\nshadow_dirstream_read: Copied to dirent: rest.php\nshadow_dirstream_read: Attempting to read entry: rest.php\nshadow_dirstream_read: Copied to dirent: rest.php\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/api/rest.php, Flags: 7
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/api/rest.php' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/api/rest.php'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 44 for realpath: /app/tests/fixtures/templatedir/api/rest.php\nFull path: /app/tests/fixtures/templatedir/api/rest.php
+In template: /app/tests/fixtures/templatedir/api/rest.php
+Path check: /app/tests/fixtures/templatedir/api/rest.php => /app/tests/fixtures/instance/api/rest.php
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/api/rest.php (original URL: /app/tests/fixtures/templatedir/api/rest.php)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/api/rest.php': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0100644 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': File
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/api/rest.php, Result: 0
+shadow_dirstream_read: Attempting to read entry: ..\nshadow_dirstream_read: Copied to dirent: ..\nshadow_dirstream_read: Attempting to read entry: .\nshadow_dirstream_read: Copied to dirent: .\nshadow_dirstream_read: Attempting to read entry (non-string key or end of hash)\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 35 for realpath: /app/tests/fixtures/templatedir/qwe\nFull path: /app/tests/fixtures/templatedir/qwe
+In template: /app/tests/fixtures/templatedir/qwe
+Path check: /app/tests/fixtures/templatedir/qwe => /app/tests/fixtures/instance/qwe
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe (original URL: /app/tests/fixtures/templatedir/qwe)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 35 for realpath: /app/tests/fixtures/templatedir/qwe\nFull path: /app/tests/fixtures/templatedir/qwe
+In template: /app/tests/fixtures/templatedir/qwe
+Path check from cache: /app/tests/fixtures/templatedir/qwe => /app/tests/fixtures/instance/qwe
+Opendir: /app/tests/fixtures/templatedir/qwe (/app/tests/fixtures/instance/qwe)
+Opening templdir: /app/tests/fixtures/templatedir/qwe
+shadow_dir_opener: Adding from TEMPLATE to mergedata: template_qwe_file.txt\nshadow_dir_opener: Adding from TEMPLATE to mergedata: ..\nshadow_dir_opener: Adding from TEMPLATE to mergedata: .\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: modulebuilder\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: ..\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: .\nshadow_dirstream_read: Attempting to read entry: template_qwe_file.txt\nshadow_dirstream_read: Copied to dirent: template_qwe_file.txt\nshadow_dirstream_read: Attempting to read entry: template_qwe_file.txt\nshadow_dirstream_read: Copied to dirent: template_qwe_file.txt\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/template_qwe_file.txt, Flags: 7
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/template_qwe_file.txt' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/template_qwe_file.txt'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 57 for realpath: /app/tests/fixtures/templatedir/qwe/template_qwe_file.txt\nFull path: /app/tests/fixtures/templatedir/qwe/template_qwe_file.txt
+In template: /app/tests/fixtures/templatedir/qwe/template_qwe_file.txt
+Path check: /app/tests/fixtures/templatedir/qwe/template_qwe_file.txt => (null)
+shadow_stat: Resolved Instance Name: NULL (original URL: /app/tests/fixtures/templatedir/qwe/template_qwe_file.txt)
+shadow_stat: Stat on ORIGINAL '/app/tests/fixtures/templatedir/qwe/template_qwe_file.txt': Result: 0
+shadow_stat: SUCCESS for '/app/tests/fixtures/templatedir/qwe/template_qwe_file.txt': Mode: 0100644 (octal), UID: 1001, GID: 0
+shadow_stat: Type for '/app/tests/fixtures/templatedir/qwe/template_qwe_file.txt': File
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/template_qwe_file.txt, Result: 0
+shadow_dirstream_read: Attempting to read entry: ..\nshadow_dirstream_read: Copied to dirent: ..\nshadow_dirstream_read: Attempting to read entry: .\nshadow_dirstream_read: Copied to dirent: .\nshadow_dirstream_read: Attempting to read entry: modulebuilder\nshadow_dirstream_read: Copied to dirent: modulebuilder\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder, Flags: 7
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 49 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder => /app/tests/fixtures/instance/qwe/modulebuilder
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 49 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder => /app/tests/fixtures/instance/qwe/modulebuilder
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder (/app/tests/fixtures/instance/qwe/modulebuilder)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 56 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds => /app/tests/fixtures/instance/qwe/modulebuilder/builds
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 56 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds => /app/tests/fixtures/instance/qwe/modulebuilder/builds
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds (/app/tests/fixtures/instance/qwe/modulebuilder/builds)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 63 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 63 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 76 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 76 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 84 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 84 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Meetings
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Cases
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Notes
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 98 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 98 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/ExternalUsers
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 92 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 92 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Project
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Contacts
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 99 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0100644 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': File
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Calls/Call.php, Result: 0
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 103 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 103 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/PurchasedLineItems
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Messages
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 94 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 94 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Documents
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 93 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 105 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0100644 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': File
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Accounts/Account.php, Result: 0
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks
+Path check: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks (original URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 90 for realpath: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks\nFull path: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks
+In template: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks
+Path check from cache: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks => /app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks
+Opendir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks (/app/tests/fixtures/instance/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks)
+Opening templdir: /app/tests/fixtures/templatedir/qwe/modulebuilder/builds/qweqwe/SugarModules/modules/Tasks
+shadow_dirstream_read: Attempting to read entry (non-string key or end of hash)\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/conflict, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/conflict' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 40 for realpath: /app/tests/fixtures/templatedir/conflict\nFull path: /app/tests/fixtures/templatedir/conflict
+In template: /app/tests/fixtures/templatedir/conflict
+Path check: /app/tests/fixtures/templatedir/conflict => /app/tests/fixtures/instance/conflict
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/conflict (original URL: /app/tests/fixtures/templatedir/conflict)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/conflict': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/conflict, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/conflict, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 40 for realpath: /app/tests/fixtures/templatedir/conflict\nFull path: /app/tests/fixtures/templatedir/conflict
+In template: /app/tests/fixtures/templatedir/conflict
+Path check from cache: /app/tests/fixtures/templatedir/conflict => /app/tests/fixtures/instance/conflict
+Opendir: /app/tests/fixtures/templatedir/conflict (/app/tests/fixtures/instance/conflict)
+Opening templdir: /app/tests/fixtures/templatedir/conflict
+shadow_dir_opener: Adding from TEMPLATE to mergedata: item\nshadow_dir_opener: Adding from TEMPLATE to mergedata: ..\nshadow_dir_opener: Adding from TEMPLATE to mergedata: .\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: item\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: ..\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: .\nshadow_dirstream_read: Attempting to read entry: item\nshadow_dirstream_read: Copied to dirent: item\nshadow_dirstream_read: Attempting to read entry: item\nshadow_dirstream_read: Copied to dirent: item\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/conflict/item, Flags: 7
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/conflict/item' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict/item'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 45 for realpath: /app/tests/fixtures/templatedir/conflict/item\nFull path: /app/tests/fixtures/templatedir/conflict/item
+In template: /app/tests/fixtures/templatedir/conflict/item
+Path check: /app/tests/fixtures/templatedir/conflict/item => /app/tests/fixtures/instance/conflict/item
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/conflict/item (original URL: /app/tests/fixtures/templatedir/conflict/item)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/conflict/item': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/conflict/item, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/conflict/item, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict/item'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 45 for realpath: /app/tests/fixtures/templatedir/conflict/item\nFull path: /app/tests/fixtures/templatedir/conflict/item
+In template: /app/tests/fixtures/templatedir/conflict/item
+Path check from cache: /app/tests/fixtures/templatedir/conflict/item => /app/tests/fixtures/instance/conflict/item
+Opendir: /app/tests/fixtures/templatedir/conflict/item (/app/tests/fixtures/instance/conflict/item)
+Opening templdir: /app/tests/fixtures/templatedir/conflict/item
+shadow_stat: ENTER URL: /app/tests/fixtures/templatedir/conflict/item/somefile.txt, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/conflict/item/somefile.txt' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict/item/somefile.txt'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check (Fallback): Initial get_full_path failed for '/app/tests/fixtures/templatedir/conflict/item/somefile.txt'. Parent from dirname: '/app/tests/fixtures/templatedir/conflict/item', Basename: 'somefile.txt'\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict/item'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 45 for realpath: /app/tests/fixtures/templatedir/conflict/item\nFull path: /app/tests/fixtures/templatedir/conflict/item
+In template: /app/tests/fixtures/templatedir/conflict/item
+Path check from cache: /app/tests/fixtures/templatedir/conflict/item => /app/tests/fixtures/instance/conflict/item
+Shadow Path Check (Fallback): Parent '/app/tests/fixtures/templatedir/conflict/item' resolved via template_to_instance to '/app/tests/fixtures/instance/conflict/item'\nShadow Path Check (Fallback): Resolved parent is a directory. New candidate path for get_full_path: '/app/tests/fixtures/instance/conflict/item/somefile.txt'\nShadow Path Check (Fallback): Successfully got new realpath: '/app/tests/fixtures/instance/conflict/item/somefile.txt' from candidate '/app/tests/fixtures/instance/conflict/item/somefile.txt'\nShadow Path Check: Updated fnamelen to 55 for realpath: /app/tests/fixtures/instance/conflict/item/somefile.txt\nFull path: /app/tests/fixtures/instance/conflict/item/somefile.txt
+In instance: /app/tests/fixtures/instance/conflict/item/somefile.txt
+T2I_DEBUG: In instance block for '/app/tests/fixtures/instance/conflict/item/somefile.txt', before OPT_RETURN_INSTANCE check. Options: 5, OPT_RETURN_INSTANCE is SET\nPath check: (null) => /app/tests/fixtures/instance/conflict/item/somefile.txt
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/conflict/item/somefile.txt (original URL: /app/tests/fixtures/templatedir/conflict/item/somefile.txt)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/conflict/item/somefile.txt': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0100644 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': File
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/conflict/item/somefile.txt, Result: 0
+shadow_dirstream_read: Attempting to read entry: ..\nshadow_dirstream_read: Copied to dirent: ..\nshadow_dirstream_read: Attempting to read entry: .\nshadow_dirstream_read: Copied to dirent: .\nshadow_dirstream_read: Attempting to read entry (non-string key or end of hash)\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/conflict2, Flags: 6
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/conflict2' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict2'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 41 for realpath: /app/tests/fixtures/templatedir/conflict2\nFull path: /app/tests/fixtures/templatedir/conflict2
+In template: /app/tests/fixtures/templatedir/conflict2
+Path check: /app/tests/fixtures/templatedir/conflict2 => /app/tests/fixtures/instance/conflict2
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/conflict2 (original URL: /app/tests/fixtures/templatedir/conflict2)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/conflict2': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0040755 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': Directory
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/conflict2, Result: 0
+shadow_dir_opener: ENTER Path: /app/tests/fixtures/templatedir/conflict2, Mode: r\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict2'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 41 for realpath: /app/tests/fixtures/templatedir/conflict2\nFull path: /app/tests/fixtures/templatedir/conflict2
+In template: /app/tests/fixtures/templatedir/conflict2
+Path check from cache: /app/tests/fixtures/templatedir/conflict2 => /app/tests/fixtures/instance/conflict2
+Opendir: /app/tests/fixtures/templatedir/conflict2 (/app/tests/fixtures/instance/conflict2)
+Opening templdir: /app/tests/fixtures/templatedir/conflict2
+shadow_dir_opener: Adding from TEMPLATE to mergedata: item\nshadow_dir_opener: Adding from TEMPLATE to mergedata: ..\nshadow_dir_opener: Adding from TEMPLATE to mergedata: .\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: item\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: ..\nshadow_dir_opener: Adding/Updating from INSTANCE to mergedata: .\nshadow_dirstream_read: Attempting to read entry: item\nshadow_dirstream_read: Copied to dirent: item\nshadow_dirstream_read: Attempting to read entry: item\nshadow_dirstream_read: Copied to dirent: item\nshadow_stat: ENTER URL: /app/tests/fixtures/templatedir/conflict2/item, Flags: 7
+STAT_DEBUG: Values: OCE=1, ORI=4, Combo=5. About to call t2i for '/app/tests/fixtures/templatedir/conflict2/item' with options: 5\nT2I_DEBUG: ENTER template_to_instance for '/app/tests/fixtures/templatedir/conflict2/item'. Options: 5, OPT_CHECK_EXISTS: SET, OPT_RETURN_INSTANCE: SET\nShadow Path Check: Updated fnamelen to 46 for realpath: /app/tests/fixtures/templatedir/conflict2/item\nFull path: /app/tests/fixtures/templatedir/conflict2/item
+In template: /app/tests/fixtures/templatedir/conflict2/item
+Path check: /app/tests/fixtures/templatedir/conflict2/item => /app/tests/fixtures/instance/conflict2/item
+shadow_stat: Resolved Instance Name: /app/tests/fixtures/instance/conflict2/item (original URL: /app/tests/fixtures/templatedir/conflict2/item)
+shadow_stat: Stat on INSTANCE '/app/tests/fixtures/instance/conflict2/item': Result: 0
+shadow_stat: SUCCESS for 'used_instance_path_potentially_freed': Mode: 0100644 (octal), UID: 1001, GID: 0
+shadow_stat: Type for 'used_instance_path_potentially_freed': File
+shadow_stat: EXIT URL: /app/tests/fixtures/templatedir/conflict2/item, Result: 0
+shadow_dirstream_read: Attempting to read entry: ..\nshadow_dirstream_read: Copied to dirent: ..\nshadow_dirstream_read: Attempting to read entry: .\nshadow_dirstream_read: Copied to dirent: .\nshadow_dirstream_read: Attempting to read entry (non-string key or end of hash)\n
