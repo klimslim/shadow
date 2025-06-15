@@ -1,5 +1,5 @@
 --TEST--
-Check iterators failure (corrected options in shadow_stat)
+Check iterators failure (with options debug)
 --SKIPIF--
 <?php if (!extension_loaded("shadow")) print "skip"; ?>
 --FILE--
